@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />
@@ -16,41 +16,75 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
-    <style>
-        .dot:hover,
-        .far {
-            cursor: pointer;
-        }
+<style>
+    .dot:hover,
+    input[type="radio"] {
+        cursor: pointer;
+    }
 
-        .selected {
-            background-color: var(--moodColor)
-        }
+    .far,
+    .fas {
+        font-size: 60px;
+    }
 
-        .far,
-        .fas {
-            font-size: 60px;
-        }
 
-        .fa-laugh {
-            color: green;
-        }
+    .fa-laugh {
+        color: green;
+    }
 
-        .fa-smile {
-            color: lightgreen;
-        }
+    .fa-smile {
+        color: yellowgreen;
+    }
 
-        .fa-meh {
-            color: yellowgreen;
-        }
+    .fa-meh {
+        color: rgb(241, 243, 95);
+    }
 
-        .fa-frown {
-            color: orange;
-        }
+    .fa-frown {
+        color: orange;
+    }
 
-        .fa-sad-tear {
-            color: red;
-        }
-    </style>
+    .fa-sad-tear {
+        color: red;
+    }
+    input[type="radio"] {
+    -webkit-appearance: none; /* Safari y Chrome */
+    -moz-appearance: none; /* Firefox */
+    appearance: none; /* Estándar */
+    outline: none; /* Eliminar el contorno al hacer clic */
+    width: 16px; /* Ajusta el ancho del radio input */
+    height: 16px; /* Ajusta la altura del radio input */
+    border-radius: 50%; /* Hace que el input tenga forma de círculo */
+    border: 2px solid transparent; /* Establece el borde del círculo */
+}
+
+
+/* Cambiar el tamaño del ícono cuando el radio button con id "mood1" está seleccionado */
+input[type="radio"]#mood1:checked + label {
+    font-size: 80px;
+}
+
+/* Cambiar el tamaño del ícono cuando el radio button con id "mood2" está seleccionado */
+input[type="radio"]#mood2:checked + label {
+    font-size: 80px;
+}
+
+/* Cambiar el tamaño del ícono cuando el radio button con id "mood3" está seleccionado */
+input[type="radio"]#mood3:checked + label {
+    font-size: 80px;
+}
+
+/* Cambiar el tamaño del ícono cuando el radio button con id "mood4" está seleccionado */
+input[type="radio"]#mood4:checked + label {
+    font-size: 80px;
+}
+
+/* Cambiar el tamaño del ícono cuando el radio button con id "mood5" está seleccionado */
+input[type="radio"]#mood5:checked + label {
+    font-size: 80px;
+}
+</style>
+
 </head>
 
 <body>
@@ -157,6 +191,32 @@
                                 <span> Dashboards </span>
                             </a>
                         </li>
+                        {{-- <div class="col-md-4">
+                            <h5 class="text-dark mt-0">Class</h5>
+                            <ul class=" fe-airplay list-unstyled megamenu-list mt-2">
+                                <li>
+                                    <a href="{{ route('classideas') }}">Semana 1</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Semana 2</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Semana 3</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Semana 4</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Extras</a>
+                                </li>
+                            </ul>
+                        </div> --}}
+                         <li>
+                            <a href="{{ route('classideas') }}">
+                                <i class="fe-airplay"></i>
+                                <span>Class</span>
+                            </a>
+                        </li> 
                     </ul>
 
                 </div>
@@ -210,10 +270,6 @@
 
     <!-- Vendor js -->
     <script src="assets/js/vendor.min.js"></script>
-
-    <!-- App js -->
-    <script src="assets/js/app.min.js"></script>
-
     <!-- Third Party js-->
     <script src="assets/libs/peity/jquery.peity.min.js"></script>
     <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
@@ -225,7 +281,9 @@
     <script src="assets/libs/quill/quill.min.js"></script>
     <!-- Dashboard init -->
     <script src="assets/js/pages/dashboard-1.init.js"></script>
-
+    
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
     <!-- Init js-->
     <script src="assets/js/pages/form-wizard.init.js"></script>
     @yield('scripts')
